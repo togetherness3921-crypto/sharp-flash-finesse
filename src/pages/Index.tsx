@@ -45,14 +45,14 @@ const Index = () => {
             <Button 
               variant="sharp" 
               onClick={handleDownload}
-              className="animate-pulse-subtle inline-flex items-center gap-0 [&_svg]:size-auto"
+              className="animate-pulse-subtle inline-flex items-center gap-2 [&_svg]:size-auto"
               style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
             >
               THIS
               <Pointer 
                 size={50}
                 className="text-black"
-                style={{ marginRight: '-45px', marginTop: '6px', transform: 'rotate(-45deg)' }}
+                style={{ transform: 'rotate(-45deg)' }}
               />
             </Button>
           </div>
