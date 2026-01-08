@@ -14,7 +14,7 @@ export const useResponsiveTextSize = () => {
     testElement.style.fontWeight = "700";
     testElement.style.textTransform = "uppercase";
     testElement.style.letterSpacing = "-0.02em";
-    testElement.innerText = "SUPER STRAIGHTFORWARD";
+    testElement.innerText = "STRAIGHTFORWARD";
     document.body.appendChild(testElement);
 
     // Get available width (viewport width minus padding)
