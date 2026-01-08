@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import StepSection from "@/components/StepSection";
 import { TextSizeProvider } from "@/contexts/TextSizeContext";
+import { MousePointerClick } from "lucide-react";
 
 const Index = () => {
   const handleDownload = () => {
@@ -41,14 +42,21 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <Button 
-              variant="sharp" 
-              onClick={handleDownload}
-              className="animate-pulse-subtle"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
-            >
-              THIS
-            </Button>
+            <div className="relative">
+              <MousePointerClick 
+                className="absolute -top-3 -right-3 text-background z-10 animate-bounce" 
+                size={32} 
+                strokeWidth={2.5}
+              />
+              <Button 
+                variant="sharp" 
+                onClick={handleDownload}
+                className="animate-pulse-subtle"
+                style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
+              >
+                THIS
+              </Button>
+            </div>
           </div>
         </StepSection>
 
