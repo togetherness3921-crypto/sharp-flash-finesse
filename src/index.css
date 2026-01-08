@@ -81,11 +81,11 @@
 
 @layer components {
   .text-display {
-    @apply font-bold uppercase tracking-tight leading-none;
+    @apply font-black uppercase tracking-tighter leading-[0.85] italic;
   }
 
   .text-display-xl {
-    @apply text-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl;
+    @apply text-display text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem];
   }
 
   .text-display-lg {
@@ -130,6 +130,32 @@
   }
 }
 
+@keyframes hero-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) skewY(8deg);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 @keyframes pulse-subtle {
   0%, 100% {
     transform: scale(1);
@@ -154,6 +180,11 @@
 
 .animate-slide-in-right {
   animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-reveal {
+  opacity: 0;
+  animation: hero-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-pulse-subtle {
