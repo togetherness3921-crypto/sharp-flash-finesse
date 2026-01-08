@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import StepSection from "@/components/StepSection";
 import { TextSizeProvider } from "@/contexts/TextSizeContext";
-import { MousePointerClick } from "lucide-react";
+import { Pointer } from "lucide-react";
 
 const Index = () => {
   const handleDownload = () => {
@@ -49,9 +49,9 @@ const Index = () => {
               style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
             >
               THIS
-              <MousePointerClick 
+              <Pointer 
                 className="text-black" 
-                size={84} 
+                size={252} 
                 strokeWidth={0}
                 fill="black"
                 style={{ marginRight: '-25px', marginBottom: '-25px' }}
