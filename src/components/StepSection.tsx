@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from "react";
 interface StepSectionProps {
   step: number;
   children: React.ReactNode;
-  delay?: number;
   inverted?: boolean;
 }
 
-const StepSection = ({ step, children, delay = 0, inverted = false }: StepSectionProps) => {
+const StepSection = ({ step, children, inverted = false }: StepSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -15,10 +14,10 @@ const StepSection = ({ step, children, delay = 0, inverted = false }: StepSectio
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
+          setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
 
     if (ref.current) {
@@ -26,12 +25,14 @@ const StepSection = ({ step, children, delay = 0, inverted = false }: StepSectio
     }
 
     return () => observer.disconnect();
-  }, [delay]);
+  }, []);
 
   return (
     <div
       ref={ref}
-      className="min-h-[30vh] flex items-center justify-center px-4 sm:px-8 py-8"
+      className={`h-screen flex-shrink-0 snap-start snap-always flex items-center justify-center px-4 sm:px-8 ${
+        inverted ? 'bg-foreground text-background' : 'bg-background text-foreground'
+      }`}
     >
       <div
         className={`w-full max-w-5xl transition-all duration-700 ${
@@ -42,7 +43,7 @@ const StepSection = ({ step, children, delay = 0, inverted = false }: StepSectio
       >
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
           <div className="flex-shrink-0">
-            <span className={`text-display-md ${inverted ? 'opacity-40' : 'opacity-40'}`}>
+            <span className="text-display-md opacity-40">
               STEP {step}:
             </span>
           </div>
