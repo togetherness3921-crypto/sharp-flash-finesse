@@ -42,10 +42,10 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <div className="relative">
+            <div className="relative inline-flex items-center">
               <MousePointerClick 
-                className="absolute -top-3 -right-3 text-background z-10 animate-bounce" 
-                size={32} 
+                className="absolute -right-8 top-1/2 -translate-y-1/2 text-black z-10" 
+                size={28} 
                 strokeWidth={2.5}
               />
               <Button 
