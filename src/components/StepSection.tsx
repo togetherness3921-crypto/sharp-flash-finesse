@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTextSize } from "@/contexts/TextSizeContext";
 
 interface StepSectionProps {
   step: number;
@@ -9,6 +10,7 @@ interface StepSectionProps {
 const StepSection = ({ step, children, inverted = false }: StepSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const { fontSize } = useTextSize();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +29,9 @@ const StepSection = ({ step, children, inverted = false }: StepSectionProps) => 
     return () => observer.disconnect();
   }, []);
 
+  // Calculate proportional sizes based on the main font size
+  const stepLabelSize = fontSize * 0.5;
+
   return (
     <div
       ref={ref}
@@ -35,21 +40,34 @@ const StepSection = ({ step, children, inverted = false }: StepSectionProps) => 
       }`}
     >
       <div
-        className={`w-full max-w-5xl transition-all duration-700 ${
+        className={`text-center transition-all duration-700 ${
           isVisible
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-12"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
-          <div className="flex-shrink-0">
-            <span className="text-display-md opacity-40">
-              STEP {step}:
-            </span>
-          </div>
-          <div className="flex-1">
-            {children}
-          </div>
+        <div 
+          className="opacity-40 mb-4"
+          style={{
+            fontSize: `${stepLabelSize}px`,
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "-0.02em",
+            lineHeight: 1,
+          }}
+        >
+          STEP {step}:
+        </div>
+        <div
+          style={{
+            fontSize: `${fontSize}px`,
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "-0.02em",
+            lineHeight: 1,
+          }}
+        >
+          {children}
         </div>
       </div>
     </div>
