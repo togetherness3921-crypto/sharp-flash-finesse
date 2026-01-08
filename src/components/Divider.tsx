@@ -1,16 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const Divider = () => {
   const [width, setWidth] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setWidth(100), 500);
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setWidth(100), 200);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="py-16 px-4 sm:px-8 overflow-hidden">
-      <div className="flex items-center justify-center gap-4">
+    <div 
+      ref={ref}
+      className="h-screen flex-shrink-0 snap-start snap-always flex items-center justify-center px-4 sm:px-8 bg-background text-foreground"
+    >
+      <div className="flex items-center justify-center gap-4 w-full">
         <div 
           className="h-1 bg-foreground transition-all duration-1000 ease-out"
           style={{ width: `${width * 0.4}%` }}
