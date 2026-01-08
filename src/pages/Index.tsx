@@ -46,13 +46,15 @@ const Index = () => {
               variant="sharp" 
               onClick={handleDownload}
               className="animate-pulse-subtle inline-flex items-center gap-0"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
+              style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
             >
               THIS
               <MousePointerClick 
-                className="text-black -mr-2" 
-                size={28} 
-                strokeWidth={2.5}
+                className="text-black" 
+                size={84} 
+                strokeWidth={0}
+                fill="black"
+                style={{ marginRight: '-25px', marginBottom: '-25px' }}
               />
             </Button>
           </div>
