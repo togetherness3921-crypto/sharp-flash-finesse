@@ -44,11 +44,11 @@ const Index = () => {
             <Button 
               variant="sharp" 
               onClick={handleDownload}
-              className="animate-pulse-subtle flex flex-col items-center"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
+              className="animate-pulse-subtle relative"
+              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em 1.5em' }}
             >
-              <span>THIS</span>
-              <span className="text-foreground opacity-70" style={{ fontSize: '1rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
+              THIS
+              <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-foreground opacity-70" style={{ fontSize: '0.8rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
                 (CLICK)
               </span>
             </Button>
