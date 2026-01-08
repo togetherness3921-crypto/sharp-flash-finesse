@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+const HeroSection = ({ children, className = "", delay = 0 }: HeroSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -8,7 +14,7 @@ const HeroSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => setIsVisible(true), delay);
         }
       },
       { threshold: 0.1 }
@@ -19,33 +25,23 @@ const HeroSection = () => {
     }
 
     return () => observer.disconnect();
-  }, []);
-
-  const lines = [
-    { text: "AZAZ", align: "text-right", delay: 0 },
-    { text: "DEAD", align: "text-left", delay: 150 },
-    { text: "SIMPLE", align: "text-right", delay: 300 },
-  ];
+  }, [delay]);
 
   return (
-    <section
+    <div
       ref={ref}
-      className="min-h-screen flex flex-col justify-center overflow-hidden"
+      className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${className}`}
     >
-      {lines.map((line, index) => (
-        <div
-          key={line.text}
-          className={`w-full ${line.align} transition-all duration-700 ease-out`}
-          style={{
-            transitionDelay: `${line.delay}ms`,
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(60px)",
-          }}
-        >
-          <span className="text-display-hero block">{line.text}</span>
-        </div>
-      ))}
-    </section>
+      <div
+        className={`w-full transition-all duration-1000 ${
+          isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-12"
+        }`}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
 

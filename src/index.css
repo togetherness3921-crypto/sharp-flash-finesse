@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -39,7 +39,6 @@
 
     /* Custom tokens */
     --font-display: 'Space Grotesk', sans-serif;
-    --font-hero: 'Anton', sans-serif;
     --shadow-sharp: 4px 4px 0px hsl(0 0% 0%);
     --shadow-sharp-hover: 6px 6px 0px hsl(0 0% 0%);
   }
@@ -82,43 +81,19 @@
 
 @layer components {
   .text-display {
-    @apply font-bold uppercase tracking-tighter leading-[0.85];
-  }
-
-  /* Massive hero text - Anton font, zero negative space */
-  .text-display-hero {
-    font-family: var(--font-hero);
-    font-size: clamp(8rem, 34vw, 45rem);
-    font-weight: 400;
-    line-height: 0.78;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
+    @apply font-bold uppercase tracking-tight leading-none;
   }
 
   .text-display-xl {
-    font-family: var(--font-hero);
-    font-size: clamp(5rem, 22vw, 28rem);
-    font-weight: 400;
-    line-height: 0.78;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+    @apply text-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl;
   }
 
   .text-display-lg {
-    @apply text-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply text-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
   }
 
   .text-display-md {
-    @apply text-display text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-  }
-
-  .text-display-sm {
-    @apply text-display text-lg sm:text-xl md:text-2xl;
-  }
-
-  /* Inverted section */
-  .section-inverted {
-    @apply bg-foreground text-background;
+    @apply text-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
   }
 }
 

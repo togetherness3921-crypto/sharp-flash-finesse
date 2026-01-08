@@ -17,7 +17,7 @@ const StepSection = ({ step, children, delay = 0 }: StepSectionProps) => {
           setTimeout(() => setIsVisible(true), delay);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) {
@@ -30,19 +30,19 @@ const StepSection = ({ step, children, delay = 0 }: StepSectionProps) => {
   return (
     <div
       ref={ref}
-      className="py-6 sm:py-8 px-4 sm:px-8"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-8 py-16"
     >
       <div
-        className={`w-full max-w-6xl mx-auto transition-all duration-500 ${
+        className={`w-full max-w-5xl transition-all duration-700 ${
           isVisible
             ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-8"
+            : "opacity-0 -translate-x-12"
         }`}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
           <div className="flex-shrink-0">
-            <span className="text-display-sm opacity-50">
-              {step}.
+            <span className="text-display-md opacity-40">
+              STEP {step}:
             </span>
           </div>
           <div className="flex-1">
