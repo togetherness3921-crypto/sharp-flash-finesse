@@ -54,7 +54,7 @@ const Index = () => {
                 size={50}
                 strokeWidth={0}
                 fill="black"
-                style={{ marginRight: '-25px', marginBottom: '-25px' }}
+                style={{ marginRight: '-45px', marginTop: '-12px', transform: 'rotate(-45deg)' }}
               />
             </Button>
           </div>
