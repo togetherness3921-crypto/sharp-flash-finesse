@@ -48,7 +48,7 @@ const Index = () => {
               style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
             >
               THIS
-              <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-2 text-foreground opacity-70" style={{ fontSize: '0.8rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
+              <span className="absolute top-full left-1/2 -translate-x-1/2 text-foreground opacity-70" style={{ fontSize: '0.8rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal', marginTop: '-18px' }}>
                 (CLICK)
               </span>
             </Button>
