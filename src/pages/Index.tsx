@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import StepSection from "@/components/StepSection";
 import { TextSizeProvider } from "@/contexts/TextSizeContext";
-import step5Video from "@/assets/step5-video.mp4";
 
 const Index = () => {
   const handleDownload = () => {
@@ -13,18 +12,6 @@ const Index = () => {
   return (
     <TextSizeProvider>
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
-        {/* Step 5 - Full video section at top */}
-        <section className="h-screen w-full snap-start snap-always relative">
-          <video
-            src={step5Video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </section>
-
         {/* Hero Line 1 */}
         <HeroSection>
           <span className="text-center block">A DEAD SIMPLE</span>
@@ -87,6 +74,16 @@ const Index = () => {
           <div className="border-4 border-dashed border-background p-8 sm:p-12">
             <p className="opacity-60" style={{ fontSize: '1rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
               [Animation placeholder - Step 4]
+            </p>
+          </div>
+        </StepSection>
+
+        {/* Step 5 */}
+        <StepSection step={5} inverted>
+          <div className="border-4 border-dashed border-background p-8 sm:p-12">
+            <p className="mb-4">🎆 EXPLOSION 🎆</p>
+            <p className="opacity-60" style={{ fontSize: '1rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
+              [Your amazing meme animation goes here]
             </p>
           </div>
         </StepSection>
