@@ -39,7 +39,7 @@ const SecondaryHero = ({ lines }: SecondaryHeroProps) => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col justify-center px-1 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center overflow-hidden"
     >
       {lines.map((line, index) => (
         <div
@@ -51,7 +51,7 @@ const SecondaryHero = ({ lines }: SecondaryHeroProps) => {
             transform: isVisible ? "translateY(0)" : "translateY(60px)",
           }}
         >
-          <span className="text-display-xl block leading-none">{line.text}</span>
+          <span className="text-display-xl block">{line.text}</span>
         </div>
       ))}
     </section>
