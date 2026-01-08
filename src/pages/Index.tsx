@@ -42,19 +42,21 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <Button 
-              variant="sharp" 
-              onClick={handleDownload}
-              className="animate-pulse-subtle inline-flex items-center gap-0 [&_svg]:size-auto"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
-            >
-              THIS
-              <Pointer 
-                size={50}
-                className="text-black"
-                style={{ marginRight: '-45px', marginTop: '6px', transform: 'rotate(-45deg)' }}
-              />
-            </Button>
+            <div style={{ paddingLeft: '22px' }}>
+              <Button 
+                variant="sharp" 
+                onClick={handleDownload}
+                className="animate-pulse-subtle inline-flex items-center gap-0 [&_svg]:size-auto"
+                style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
+              >
+                THIS
+                <Pointer 
+                  size={50}
+                  className="text-black"
+                  style={{ marginRight: '-45px', marginTop: '6px', transform: 'rotate(-45deg)' }}
+                />
+              </Button>
+            </div>
           </div>
         </StepSection>
 
