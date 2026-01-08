@@ -12,29 +12,26 @@ const Index = () => {
 
   return (
     <main className="bg-background text-foreground overflow-x-hidden">
-      {/* Combined Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 py-12">
-        <div className="w-full flex flex-col items-center gap-0">
-          <h1 
-            className="text-display-xl text-center animate-hero-reveal"
-            style={{ animationDelay: '0.1s' }}
-          >
-            AZAZ'S DEAD SIMPLE
-          </h1>
-          <h2 
-            className="text-display-xl text-center animate-hero-reveal"
-            style={{ animationDelay: '0.3s' }}
-          >
-            SUPER STRAIGHTFORWARD
-          </h2>
-          <h3 
-            className="text-display-xl text-center animate-hero-reveal"
-            style={{ animationDelay: '0.5s' }}
-          >
-            NO BS SITE SETUP
-          </h3>
-        </div>
-      </section>
+      {/* Hero Line 1 */}
+      <HeroSection>
+        <h1 className="text-display-xl text-center">
+          AZAZ'S DEAD SIMPLE
+        </h1>
+      </HeroSection>
+
+      {/* Hero Line 2 */}
+      <HeroSection delay={200}>
+        <h2 className="text-display-xl text-center">
+          SUPER STRAIGHTFORWARD
+        </h2>
+      </HeroSection>
+
+      {/* Hero Line 3 */}
+      <HeroSection delay={400}>
+        <h3 className="text-display-xl text-center">
+          NO BS SITE SETUP
+        </h3>
+      </HeroSection>
 
       {/* Themed Divider */}
       <Divider />
