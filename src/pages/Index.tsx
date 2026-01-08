@@ -45,7 +45,7 @@ const Index = () => {
             <Button 
               variant="sharp" 
               onClick={handleDownload}
-              className="animate-pulse-subtle inline-flex items-center gap-0"
+              className="animate-pulse-subtle inline-flex items-center gap-0 [&_svg]:size-auto"
               style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
             >
               THIS
