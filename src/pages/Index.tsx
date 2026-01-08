@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import StepSection from "@/components/StepSection";
 import { TextSizeProvider } from "@/contexts/TextSizeContext";
-import { Pointer } from "lucide-react";
 
 const Index = () => {
   const handleDownload = () => {
@@ -45,15 +44,10 @@ const Index = () => {
             <Button 
               variant="sharp" 
               onClick={handleDownload}
-              className="animate-pulse-subtle inline-flex items-center gap-2 [&_svg]:size-auto"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
+              className="animate-pulse-subtle"
+              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
             >
               THIS
-              <Pointer 
-                size={50}
-                className="text-black"
-                style={{ transform: 'rotate(-45deg)' }}
-              />
             </Button>
           </div>
         </StepSection>
