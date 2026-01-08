@@ -42,7 +42,12 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <div className="relative inline-block">
+            <div className="relative inline-flex items-center">
+              <MousePointerClick 
+                className="absolute right-1 top-1/2 -translate-y-1/2 text-black z-10" 
+                size={28} 
+                strokeWidth={2.5}
+              />
               <Button 
                 variant="sharp" 
                 onClick={handleDownload}
@@ -51,11 +56,6 @@ const Index = () => {
               >
                 THIS
               </Button>
-              <MousePointerClick 
-                className="absolute -right-3 -bottom-2 text-black pointer-events-none" 
-                size={28} 
-                strokeWidth={2.5}
-              />
             </div>
           </div>
         </StepSection>
