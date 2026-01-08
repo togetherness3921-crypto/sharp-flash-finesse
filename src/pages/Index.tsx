@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import StepSection from "@/components/StepSection";
 import { TextSizeProvider } from "@/contexts/TextSizeContext";
-import { Hand } from "lucide-react";
+import { Pointer } from "lucide-react";
 
 const Index = () => {
   const handleDownload = () => {
@@ -49,10 +49,11 @@ const Index = () => {
               style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
             >
               THIS
-              <Hand 
-                className="text-black" 
+              <Pointer 
                 size={50}
                 strokeWidth={2}
+                fill="black"
+                stroke="black"
                 style={{ marginRight: '-45px', marginTop: '6px', transform: 'rotate(-45deg)' }}
               />
             </Button>
