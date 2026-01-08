@@ -1,23 +1,23 @@
-import { useEffect, useRef, useState, ReactNode } from "react";
-import { useTextSize } from "@/contexts/TextSizeContext";
+import { useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
-  children: ReactNode;
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
 }
 
-const HeroSection = ({ children }: HeroSectionProps) => {
+const HeroSection = ({ children, className = "", delay = 0 }: HeroSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const { fontSize } = useTextSize();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => setIsVisible(true), delay);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -25,26 +25,19 @@ const HeroSection = ({ children }: HeroSectionProps) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [delay]);
 
   return (
     <div
       ref={ref}
-      className="h-screen flex-shrink-0 snap-start snap-always flex items-center justify-center bg-background px-4 sm:px-8"
+      className={`min-h-screen flex items-center justify-center px-4 sm:px-8 ${className}`}
     >
       <div
-        className={`transition-all duration-700 ${
+        className={`w-full transition-all duration-1000 ${
           isVisible
             ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+            : "opacity-0 translate-y-12"
         }`}
-        style={{
-          fontSize: `${fontSize}px`,
-          fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: "-0.02em",
-          lineHeight: 1,
-        }}
       >
         {children}
       </div>
