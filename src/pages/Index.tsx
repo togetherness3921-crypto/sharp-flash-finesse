@@ -41,14 +41,19 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <Button 
-              variant="sharp" 
-              onClick={handleDownload}
-              className="animate-pulse-subtle"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
-            >
-              THIS
-            </Button>
+            <div className="flex flex-col items-center">
+              <Button 
+                variant="sharp" 
+                onClick={handleDownload}
+                className="animate-pulse-subtle"
+                style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
+              >
+                THIS
+              </Button>
+              <span className="opacity-70 mt-1" style={{ fontSize: '1rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}>
+                (CLICK)
+              </span>
+            </div>
           </div>
         </StepSection>
 
