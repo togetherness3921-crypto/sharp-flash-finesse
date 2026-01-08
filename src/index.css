@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -39,6 +39,7 @@
 
     /* Custom tokens */
     --font-display: 'Space Grotesk', sans-serif;
+    --font-hero: 'Anton', sans-serif;
     --shadow-sharp: 4px 4px 0px hsl(0 0% 0%);
     --shadow-sharp-hover: 6px 6px 0px hsl(0 0% 0%);
   }
@@ -84,13 +85,23 @@
     @apply font-bold uppercase tracking-tighter leading-[0.85];
   }
 
-  /* Massive hero text - takes over the space */
+  /* Massive hero text - Anton font, minimal negative space */
   .text-display-hero {
-    @apply text-display text-[18vw] sm:text-[20vw] md:text-[22vw] lg:text-[24vw];
+    font-family: var(--font-hero);
+    font-size: clamp(6rem, 26vw, 32rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
 
   .text-display-xl {
-    @apply text-display text-[12vw] sm:text-[14vw] md:text-[15vw] lg:text-[16vw];
+    font-family: var(--font-hero);
+    font-size: clamp(4rem, 18vw, 22rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
 
   .text-display-lg {

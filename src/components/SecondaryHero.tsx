@@ -39,19 +39,19 @@ const SecondaryHero = ({ lines }: SecondaryHeroProps) => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col justify-center px-2 sm:px-4 py-8 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center px-1 overflow-hidden"
     >
       {lines.map((line, index) => (
         <div
           key={line.text}
           className={`w-full ${getAlignment(line.align)} transition-all duration-700 ease-out`}
           style={{
-            transitionDelay: `${index * 100}ms`,
+            transitionDelay: `${index * 150}ms`,
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(40px)",
+            transform: isVisible ? "translateY(0)" : "translateY(60px)",
           }}
         >
-          <span className="text-display-xl block">{line.text}</span>
+          <span className="text-display-xl block leading-none">{line.text}</span>
         </div>
       ))}
     </section>
