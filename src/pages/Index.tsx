@@ -51,9 +51,7 @@ const Index = () => {
               THIS
               <Pointer 
                 size={50}
-                strokeWidth={2}
-                fill="black"
-                stroke="black"
+                className="text-black"
                 style={{ marginRight: '-45px', marginTop: '6px', transform: 'rotate(-45deg)' }}
               />
             </Button>
