@@ -42,23 +42,21 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <div className="relative">
-              <Button 
-                variant="sharp" 
-                onClick={handleDownload}
-                className="animate-pulse-subtle"
-                style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
-              >
-                THIS
-              </Button>
+            <Button 
+              variant="sharp" 
+              onClick={handleDownload}
+              className="animate-pulse-subtle inline-flex items-center gap-0"
+              style={{ fontSize: 'inherit', height: 'auto', padding: '0.3em 0.5em' }}
+            >
+              THIS
               <Pointer 
-                className="absolute pointer-events-none"
-                size={200}
+                className="text-black" 
+                size={756}
                 strokeWidth={0}
                 fill="black"
-                style={{ top: '25px', left: 'calc(100% - 25px)' }}
+                style={{ marginRight: '-25px', marginBottom: '-25px' }}
               />
-            </div>
+            </Button>
           </div>
         </StepSection>
 
