@@ -44,7 +44,7 @@ const Index = () => {
             <span>DOWNLOAD</span>
             <div className="relative inline-flex items-center">
               <MousePointerClick 
-                className="absolute -right-8 top-1/2 -translate-y-1/2 text-black z-10" 
+                className="absolute right-1 top-1/2 -translate-y-1/2 text-black z-10" 
                 size={28} 
                 strokeWidth={2.5}
               />
