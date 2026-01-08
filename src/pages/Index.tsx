@@ -42,19 +42,21 @@ const Index = () => {
         <StepSection step={1} inverted>
           <div className="flex flex-col items-center gap-4">
             <span>DOWNLOAD</span>
-            <Button 
-              variant="sharp" 
-              onClick={handleDownload}
-              className="animate-pulse-subtle"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
-            >
-              THIS
+            <div className="relative inline-block">
+              <Button 
+                variant="sharp" 
+                onClick={handleDownload}
+                className="animate-pulse-subtle"
+                style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em 1em' }}
+              >
+                THIS
+              </Button>
               <MousePointerClick 
-                className="text-black ml-1" 
+                className="absolute -right-3 -bottom-2 text-black pointer-events-none" 
                 size={28} 
                 strokeWidth={2.5}
               />
-            </Button>
+            </div>
           </div>
         </StepSection>
 
