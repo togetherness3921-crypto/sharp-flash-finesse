@@ -45,11 +45,11 @@ const Index = () => {
               variant="sharp" 
               onClick={handleDownload}
               className="animate-pulse-subtle relative"
-              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em calc(1em - 30px)' }}
+              style={{ fontSize: 'inherit', height: 'auto', padding: '0.5em calc(1em - 60px)' }}
             >
               THIS
               <span className="absolute top-full left-1/2 -translate-x-1/2 text-foreground opacity-70" style={{ fontSize: '0.8rem', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal', marginTop: '-18px' }}>
-                (CLICK)
+                (Click Here)
               </span>
             </Button>
           </div>
