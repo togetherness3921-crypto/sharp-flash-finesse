@@ -81,19 +81,33 @@
 
 @layer components {
   .text-display {
-    @apply font-bold uppercase tracking-tight leading-none;
+    @apply font-bold uppercase tracking-tighter leading-[0.85];
+  }
+
+  /* Massive hero text - takes over the space */
+  .text-display-hero {
+    @apply text-display text-[18vw] sm:text-[20vw] md:text-[22vw] lg:text-[24vw];
   }
 
   .text-display-xl {
-    @apply text-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl;
+    @apply text-display text-[12vw] sm:text-[14vw] md:text-[15vw] lg:text-[16vw];
   }
 
   .text-display-lg {
-    @apply text-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+    @apply text-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
 
   .text-display-md {
-    @apply text-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-display text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .text-display-sm {
+    @apply text-display text-lg sm:text-xl md:text-2xl;
+  }
+
+  /* Inverted section */
+  .section-inverted {
+    @apply bg-foreground text-background;
   }
 }
 
