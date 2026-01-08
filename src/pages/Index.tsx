@@ -1,88 +1,84 @@
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
+import SecondaryHero from "@/components/SecondaryHero";
 import Divider from "@/components/Divider";
 import StepSection from "@/components/StepSection";
 import EllipsisSection from "@/components/EllipsisSection";
 
 const Index = () => {
   const handleDownload = () => {
-    // Placeholder for download functionality
     console.log("Download initiated");
   };
 
   return (
     <main className="bg-background text-foreground overflow-x-hidden">
-      {/* Hero Line 1 */}
-      <HeroSection>
-        <h1 className="text-display-xl text-center">
-          AZAZ'S DEAD SIMPLE
-        </h1>
-      </HeroSection>
+      {/* Hero: AZAZ / DEAD / SIMPLE */}
+      <HeroSection />
 
-      {/* Hero Line 2 */}
-      <HeroSection delay={200}>
-        <h2 className="text-display-xl text-center">
-          SUPER STRAIGHTFORWARD
-        </h2>
-      </HeroSection>
+      {/* SUPER STRAIGHTFORWARD */}
+      <SecondaryHero 
+        lines={[
+          { text: "SUPER", align: "left" },
+          { text: "STRAIGHT", align: "right" },
+          { text: "FORWARD", align: "left" },
+        ]} 
+      />
 
-      {/* Hero Line 3 */}
-      <HeroSection delay={400}>
-        <h3 className="text-display-xl text-center">
-          NO BS SITE SETUP
-        </h3>
-      </HeroSection>
+      {/* NO BS SITE SETUP */}
+      <SecondaryHero 
+        lines={[
+          { text: "NO BS", align: "right" },
+          { text: "SITE", align: "left" },
+          { text: "SETUP", align: "right" },
+        ]} 
+      />
 
-      {/* Themed Divider */}
+      {/* Divider */}
       <Divider />
 
-      {/* Step 1 */}
-      <StepSection step={1}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <span className="text-display-lg">DOWNLOAD</span>
-          <Button 
-            variant="sharp" 
-            size="xl"
-            onClick={handleDownload}
-            className="animate-pulse-subtle"
-          >
-            THIS
-          </Button>
-        </div>
-      </StepSection>
+      {/* Inverted Section - Steps */}
+      <section className="section-inverted py-12 sm:py-16">
+        {/* Step 1 */}
+        <StepSection step={1}>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <span className="text-display-lg">DOWNLOAD</span>
+            <Button 
+              variant="sharp" 
+              size="xl"
+              onClick={handleDownload}
+              className="animate-pulse-subtle bg-background text-foreground hover:bg-background/90"
+            >
+              THIS
+            </Button>
+          </div>
+        </StepSection>
 
-      {/* Step 2 */}
-      <StepSection step={2} delay={100}>
-        <span className="text-display-lg">LOGIN TO GODADDY</span>
-      </StepSection>
+        {/* Step 2 */}
+        <StepSection step={2} delay={50}>
+          <span className="text-display-lg">LOGIN TO GODADDY</span>
+        </StepSection>
 
-      {/* Step 3 */}
-      <StepSection step={3} delay={200}>
-        <div className="border-4 border-dashed border-foreground p-8 sm:p-12 text-center">
-          <p className="text-lg opacity-60 uppercase tracking-wider">
-            [Animation placeholder - Step 3]
-          </p>
-        </div>
-      </StepSection>
+        {/* Step 3 */}
+        <StepSection step={3} delay={100}>
+          <div className="border-2 border-dashed border-background/50 p-4 sm:p-6 text-center">
+            <p className="text-sm opacity-60 uppercase tracking-wider">
+              [Animation placeholder]
+            </p>
+          </div>
+        </StepSection>
 
-      {/* Step 4 */}
-      <StepSection step={4} delay={300}>
-        <div className="border-4 border-dashed border-foreground p-8 sm:p-12 text-center">
-          <p className="text-lg opacity-60 uppercase tracking-wider">
-            [Animation placeholder - Step 4]
-          </p>
-        </div>
-      </StepSection>
+        {/* Step 4 */}
+        <StepSection step={4} delay={150}>
+          <div className="border-2 border-dashed border-background/50 p-4 sm:p-6 text-center">
+            <p className="text-sm opacity-60 uppercase tracking-wider">
+              [Animation placeholder]
+            </p>
+          </div>
+        </StepSection>
 
-      {/* Step 5 with ellipses and explosion */}
-      <EllipsisSection />
-
-      {/* Footer */}
-      <footer className="py-16 text-center border-t-4 border-foreground">
-        <p className="text-sm uppercase tracking-widest opacity-60">
-          Made with zero bs
-        </p>
-      </footer>
+        {/* Step 5 - Ellipsis & Explosion */}
+        <EllipsisSection />
+      </section>
     </main>
   );
 };

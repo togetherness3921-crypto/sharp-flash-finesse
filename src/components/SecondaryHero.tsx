@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-const HeroSection = () => {
+interface SecondaryHeroProps {
+  lines: { text: string; align?: "left" | "right" | "center" }[];
+}
+
+const SecondaryHero = ({ lines }: SecondaryHeroProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -21,11 +25,16 @@ const HeroSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const lines = [
-    { text: "AZAZ", align: "text-right", delay: 0 },
-    { text: "DEAD", align: "text-left", delay: 150 },
-    { text: "SIMPLE", align: "text-right", delay: 300 },
-  ];
+  const getAlignment = (align?: "left" | "right" | "center") => {
+    switch (align) {
+      case "left":
+        return "text-left";
+      case "right":
+        return "text-right";
+      default:
+        return "text-center";
+    }
+  };
 
   return (
     <section
@@ -35,18 +44,18 @@ const HeroSection = () => {
       {lines.map((line, index) => (
         <div
           key={line.text}
-          className={`w-full ${line.align} transition-all duration-700 ease-out`}
+          className={`w-full ${getAlignment(line.align)} transition-all duration-700 ease-out`}
           style={{
-            transitionDelay: `${line.delay}ms`,
+            transitionDelay: `${index * 100}ms`,
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(40px)",
           }}
         >
-          <span className="text-display-hero block">{line.text}</span>
+          <span className="text-display-xl block">{line.text}</span>
         </div>
       ))}
     </section>
   );
 };
 
-export default HeroSection;
+export default SecondaryHero;
