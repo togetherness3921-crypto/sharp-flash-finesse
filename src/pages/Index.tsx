@@ -51,7 +51,7 @@ const Index = () => {
               THIS
               <Pointer 
                 className="text-black" 
-                size={252} 
+                size={756}
                 strokeWidth={0}
                 fill="black"
                 style={{ marginRight: '-25px', marginBottom: '-25px' }}
